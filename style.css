@@ -1,0 +1,548 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9ff; /* Светлый лавандово-голубой фон */
+    color: #333344;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Фоновые светящиеся элементы */
+.background-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.glow-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    animation: glow-pulse 15s infinite alternate ease-in-out;
+}
+
+.glow-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.8), rgba(255, 182, 193, 0));
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.glow-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(216, 191, 216, 0.7), rgba(216, 191, 216, 0));
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.glow-3 {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.6), rgba(173, 216, 230, 0));
+    bottom: 15%;
+    left: 15%;
+    animation-delay: 4s;
+}
+
+.glow-4 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(221, 160, 221, 0.5), rgba(221, 160, 221, 0));
+    top: 20%;
+    right: 20%;
+    animation-delay: 6s;
+}
+
+.glow-5 {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, rgba(255, 218, 185, 0.5), rgba(255, 218, 185, 0));
+    bottom: 25%;
+    right: 5%;
+    animation-delay: 8s;
+}
+
+.glow-6 {
+    width: 280px;
+    height: 280px;
+    background: radial-gradient(circle, rgba(176, 224, 230, 0.5), rgba(176, 224, 230, 0));
+    top: 40%;
+    left: 70%;
+    animation-delay: 10s;
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.4;
+    }
+    50% {
+        transform: scale(1.05) translate(10px, -10px);
+        opacity: 0.5;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Главный заголовок */
+.main-header {
+    text-align: center;
+    padding: 100px 0 60px;
+}
+
+.name-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #2a2a4a;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+}
+
+.accent {
+    color: #8a5ea8;
+    font-weight: 700;
+    background: linear-gradient(45deg, #8a5ea8, #d4a5e8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-family: 'Jost', sans-serif;
+    font-size: 2rem;
+    color: #6b5b95;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* Линия под "Графический дизайнер" */
+.header-line {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8a5ea8, transparent);
+    margin: 0 auto;
+    width: 600px;
+    max-width: 80%;
+    border-radius: 2px;
+    position: relative;
+}
+
+.header-line::before,
+.header-line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 12px;
+    background-color: #8a5ea8;
+    border-radius: 50%;
+    top: 0;
+}
+
+.header-line::before {
+    left: -20px;
+}
+
+.header-line::after {
+    right: -20px;
+}
+
+/* Заголовки секций */
+.section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    color: #2a2a4a;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+}
+
+/* Линия "от руки" для секций */
+.hand-drawn-line {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #8a5ea8, transparent);
+    margin: 25px 0 40px;
+    position: relative;
+    max-width: 500px;
+    border-radius: 2px;
+}
+
+.hand-drawn-line::before,
+.hand-drawn-line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    background-color: #8a5ea8;
+    border-radius: 50%;
+    top: 0;
+}
+
+.hand-drawn-line::before {
+    left: -15px;
+}
+
+.hand-drawn-line::after {
+    right: -15px;
+}
+
+.hand-drawn-line.footer-line {
+    max-width: 400px;
+    margin: 20px auto 30px;
+}
+
+/* Секции */
+.section {
+    margin: 100px 0;
+    padding: 0;
+}
+
+.content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.content p {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    color: #444466;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.skill-category h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 1.8rem;
+    color: #6b5b95;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #8a5ea8;
+    padding-bottom: 10px;
+    font-weight: 500;
+}
+
+.icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 15px;
+    border-radius: 12px;
+    width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 94, 168, 0.1);
+    border: 1px solid rgba(138, 94, 168, 0.1);
+}
+
+.icon:hover {
+    box-shadow: 0 10px 25px rgba(138, 94, 168, 0.2);
+    transform: translateY(-5px);
+    border-color: rgba(138, 94, 168, 0.3);
+}
+
+.icon i {
+    font-size: 2.5rem;
+    color: #8a5ea8;
+    margin-bottom: 10px;
+}
+
+.icon span {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #444466;
+    font-weight: 500;
+}
+
+/* Инструменты */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tool {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 94, 168, 0.1);
+    border: 1px solid rgba(138, 94, 168, 0.1);
+}
+
+.tool:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(138, 94, 168, 0.2);
+    border-color: rgba(138, 94, 168, 0.3);
+}
+
+.tool-icon {
+    font-size: 3rem;
+    color: #8a5ea8;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.tool h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #2a2a4a;
+    font-weight: 600;
+}
+
+.tool p {
+    font-size: 0.95rem;
+    color: #6b5b95;
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 80px 20px 60px;
+    margin-top: 120px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(138, 94, 168, 0.2);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.2rem;
+    color: #444466;
+}
+
+.contact-item i {
+    color: #8a5ea8;
+    font-size: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #8a5ea8, #d4a5e8);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 94, 168, 0.3);
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(138, 94, 168, 0.5);
+}
+
+.copyright {
+    margin-top: 40px;
+    color: #6b5b95;
+    font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .name-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .header-line {
+        width: 400px;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .content p {
+        font-size: 1.2rem;
+    }
+    
+    .section {
+        margin: 80px 0;
+    }
+    
+    .glow-circle {
+        filter: blur(40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .name-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .header-line {
+        width: 300px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .icon {
+        width: 100px;
+        padding: 12px;
+    }
+    
+    .content p {
+        font-size: 1.1rem;
+    }
+    
+    .glow-circle {
+        display: none;
+    }
+    
+    .glow-1, .glow-2 {
+        display: block;
+        width: 250px;
+        height: 250px;
+        filter: blur(30px);
+    }
+    
+    .main-header {
+        padding: 80px 0 40px;
+    }
+    
+    .footer {
+        padding: 60px 20px 40px;
+        margin-top: 80px;
+    }
+}
+
+/* Дополнительные стили для улучшения отображения */
+::selection {
+    background-color: rgba(138, 94, 168, 0.3);
+    color: #2a2a4a;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(138, 94, 168, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(138, 94, 168, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(138, 94, 168, 0.7);
+}
+
+/* Плавный скролл */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Улучшение читаемости на мобильных */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
+    .content {
+        font-size: 1.1rem;
+    }
+}
+
+/* Улучшение контрастности для доступности */
+@media (prefers-contrast: high) {
+    .accent {
+        color: #6a1b9a;
+        background: none;
+        -webkit-text-fill-color: #6a1b9a;
+    }
+    
+    .name-title, .section-title {
+        color: #1a1a2a;
+    }
+}
